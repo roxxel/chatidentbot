@@ -24,9 +24,9 @@ const bot = new Bot(token);
 
 bot.command("start", async (ctx) => {
   const user = ctx.from;
-  const text = dedent`Hi ${mentionMarkdownV2(user)}\\!
-  I'm a bot that helps you get IDs of users and chats\\.
-  Type /help to see what I can do\\.`;
+  const text = dedent`Hi ${mentionMarkdownV2(user)}\!
+  I'm a bot that helps you get IDs of users and chats\.
+  Type /help to see what I can do\.`;
   await ctx.reply(text, { parse_mode: "MarkdownV2" });
 });
 
