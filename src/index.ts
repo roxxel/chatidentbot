@@ -1,4 +1,4 @@
-import { Bot } from "grammy";
+import { Bot, InputFile } from "grammy";
 import { buildMessage, combineMessages } from "./helpers";
 import dedent from "dedent";
 
@@ -53,9 +53,10 @@ bot.command("json", async (ctx) => {
       parse_mode: "MarkdownV2",
     });
   } else {
-    await ctx.reply(
-      "The message data is too long to display here. Please use a bot or tool that can handle large JSON data."
-    );
+    //send as a file
+    await ctx.replyWithDocument(new InputFile(Buffer.from(jsonString), "message.json"), {
+      caption: "Length too long, sending as a file.",
+    });
   }
 });
 
