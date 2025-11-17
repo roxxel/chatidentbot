@@ -1,0 +1,8 @@
+services:
+  chatidentbot:
+    build: .
+    container_name: chatidentbot
+    env_file:
+      - path: ./.env
+        required: false
+    restart: unless-stopped
