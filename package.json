@@ -1,0 +1,21 @@
+{
+  "name": "chatidentbot",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/index.ts",
+    "build": "bun build --target=bun --outfile=dist/index.js src/index.ts",
+    "dev": "bun --watch src/index.ts"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "dedent": "^1.7.0",
+    "grammy": "^1.38.3"
+  }
+}
